@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurboDrive - site officiel</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2416014288587554"
+            crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-2416014288587554">
+    <style>
+        :root {
+            --bg-gradient-start-1: #343a40;
+            --bg-gradient-mid-1: #212529;
+            --bg-gradient-end-1: #1a1e22;
+
+            --container-bg: rgba(255, 255, 255, 0.95);
+
+            --text-primary: #2c3e50;
+            --text-secondary: #5a748c;
+            --heading-color: #0078d4;
+            --border-color: rgba(0, 0, 0, 0.15);
+            --shadow-color: rgba(0, 0, 0, 0.2);
+
+            --button-main-bg-start: #FF0000;
+            --button-main-bg-end: #CC0000;
+            --button-main-hover-start: #B30000;
+            --button-main-hover-end: #800000;
+
+            --button-secondary-bg-start: #0000FF;
+            --button-secondary-bg-end: #0000CC;
+            --button-secondary-hover-start: #0000B3;
+            --button-secondary-hover-end: #000080;
+            
+            --button-yellow-bg-start: #FFFF00;
+            --button-yellow-bg-end: #CCCC00;
+            --button-yellow-hover-start: #B3B300;
+            --button-yellow-hover-end: #808000;
+
+            --button-green-bg-start: #28a745;
+            --button-green-bg-end: #218838;
+            --button-green-hover-start: #1e7e34;
+            --button-green-hover-end: #1c742c;
+
+            --button-red-bg-start: #dc3545;
+            --button-red-bg-end: #c82333;
+            --button-red-hover-start: #bb2d3b;
+            --button-red-hover-end: #a71d2a;
+
+            --glass-filter: blur(25px) saturate(180%);
+
+            --shape-color-1: rgba(0, 0, 255, 0.5);
+            --shape-color-2: rgba(255, 0, 0, 0.3);
+            --shape-color-3: rgba(255, 255, 0, 0.4);
+            --shape-color-4: rgba(255, 255, 255, 0.3);
+            --shape-color-5: rgba(0, 0, 255, 0.4);
+            --shape-color-6: rgba(255, 0, 0, 0.25);
+            --shape-color-7: rgba(255, 255, 0, 0.6);
+
+            --inner-shape-blue: rgba(0, 0, 255, 0.15); /* Increased opacity */
+            --inner-shape-red: rgba(255, 0, 0, 0.12);  /* Increased opacity */
+            --inner-shape-yellow: rgba(255, 255, 0, 0.1); /* Increased opacity */
+            --inner-shape-white: rgba(255, 255, 255, 0.18); /* Increased opacity */
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--bg-gradient-start-1), var(--bg-gradient-mid-1), var(--bg-gradient-end-1));
+            background-size: 200% 200%;
+            animation: backgroundShift 25s ease-in-out infinite alternate;
+            color: var(--text-primary);
+            transition: background-color 0.8s ease, color 0.8s ease;
+        }
+
+        @keyframes backgroundShift {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        .background-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.35;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            transition: background-color 0.8s ease;
+        }
+
+        .shape-1 {
+            width: 550px; height: 550px;
+            background: var(--shape-color-1);
+            top: 8%; left: 7%;
+            animation: moveShape1 32s ease-in-out infinite alternate;
+        }
+        .shape-2 {
+            width: 650px; height: 650px;
+            background: var(--shape-color-2);
+            bottom: 12%; right: 8%;
+            animation: moveShape2 38s ease-in-out infinite alternate;
+        }
+        .shape-3 {
+            width: 450px; height: 450px;
+            background: var(--shape-color-3);
+            top: 35%; left: 28%;
+            animation: moveShape3 28s ease-in-out infinite alternate;
+        }
+        .shape-4 {
+            width: 380px; height: 380px;
+            background: var(--shape-color-4);
+            top: 18%; right: 22%;
+            animation: moveShape4 30s ease-in-out infinite alternate;
+        }
+        .shape-5 {
+            width: 480px; height: 480px;
+            background: var(--shape-color-5);
+            bottom: 7%; left: 18%;
+            animation: moveShape5 35s ease-in-out infinite alternate;
+        }
+        .shape-6 {
+            width: 580px; height: 580px;
+            background: var(--shape-color-6);
+            top: 3%; right: 12%;
+            animation: moveShape6 42s ease-in-out infinite alternate;
+        }
+        .shape-7 {
+            width: 320px; height: 320px;
+            background: var(--shape-color-7);
+            bottom: 22%; left: 7%;
+            animation: moveShape7 29s ease-in-out infinite alternate;
+        }
+
+        @keyframes moveShape1 {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            50% { transform: translate(120px, 180px) scale(1.08) rotate(50deg); }
+            100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+        }
+        @keyframes moveShape2 {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            50% { transform: translate(-140px, -100px) scale(0.95) rotate(-35deg); }
+            100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+        }
+        @keyframes moveShape3 {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            50% { transform: translate(90px, -110px) scale(1.15) rotate(65deg); }
+            100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+        }
+        @keyframes moveShape4 {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            50% { transform: translate(-60px, 220px) scale(1.02) rotate(-25deg); }
+            100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+        }
+        @keyframes moveShape5 {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            50% { transform: translate(160px, -80px) scale(1.1) rotate(40deg); }
+            100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+        }
+        @keyframes moveShape6 {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            50% { transform: translate(-110px, 60px) scale(1.05) rotate(-20deg); }
+            100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+        }
+        @keyframes moveShape7 {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            50% { transform: translate(80px, -130px) scale(0.98) rotate(30deg); }
+            100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+        }
+
+        .container {
+            background-color: var(--container-bg);
+            padding: 40px 60px;
+            border-radius: 24px;
+            box-shadow: 0 16px 32px var(--shadow-color), inset 0 0 0 1px var(--border-color);
+            text-align: center;
+            max-width: 900px;
+            width: 90%;
+            margin: 50px auto;
+            backdrop-filter: var(--glass-filter);
+            -webkit-backdrop-filter: var(--glass-filter);
+            border: 1px solid var(--border-color);
+            animation: fadeInScale 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px) scale(0.98);
+            transition: transform 0.3s ease-out, background-color 0.8s ease, box-shadow 0.8s ease, border-color 0.8s ease;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 150px;
+            background: radial-gradient(circle at center top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes fadeInScale {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .container:hover {
+            transform: translateY(-8px) scale(1.008);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), inset 0 0 0 1px var(--border-color);
+        }
+
+        .inner-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(30px);
+            opacity: 0.8;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            transition: background-color 0.8s ease;
+        }
+
+        .inner-shape-1 {
+            width: 150px; height: 150px;
+            background: var(--inner-shape-blue);
+            top: -50px; left: -50px;
+            animation: moveInnerShape1 20s ease-in-out infinite alternate;
+        }
+        .inner-shape-2 {
+            width: 120px; height: 120px;
+            background: var(--inner-shape-red);
+            bottom: -40px; right: -40px;
+            animation: moveInnerShape2 25s ease-in-out infinite alternate;
+        }
+        .inner-shape-3 {
+            width: 100px; height: 100px;
+            background: var(--inner-shape-yellow);
+            top: 60%; left: 10%;
+            animation: moveInnerShape3 18s ease-in-out infinite alternate;
+        }
+        .inner-shape-4 {
+            width: 80px; height: 80px;
+            background: var(--inner-shape-white);
+            bottom: 20%; right: 15%;
+            animation: moveInnerShape4 22s ease-in-out infinite alternate;
+        }
+
+        @keyframes moveInnerShape1 {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(50px, 80px) scale(1.1); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+        @keyframes moveInnerShape2 {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-70px, -30px) scale(0.9); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+        @keyframes moveInnerShape3 {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -50px) scale(1.05); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+        @keyframes moveInnerShape4 {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-40px, 20px) scale(0.95); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+
+
+        h1, h2 {
+            color: var(--heading-color);
+            margin-bottom: 25px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            transition: color 0.8s ease;
+        }
+        h1 {
+            font-size: 3.8em;
+            margin-bottom: 12px;
+        }
+        h2 {
+            font-size: 2.5em;
+            margin-top: 45px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        p {
+            line-height: 1.7;
+            margin-bottom: 28px;
+            font-size: 1.15em;
+            color: var(--text-secondary);
+            transition: color 0.8s ease;
+        }
+
+        .slogan {
+            font-size: 1.6em;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 35px;
+            font-style: italic;
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 35px;
+            margin-bottom: 45px;
+        }
+
+        .button {
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 16px;
+            font-size: 1.35em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            letter-spacing: 0.02em;
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transition: width 0.4s ease-out, height 0.4s ease-out;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+        .button:hover::before {
+            width: 280px;
+            height: 280px;
+        }
+
+        .button:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.35);
+        }
+        .button:active {
+            transform: translateY(-2px) scale(0.98);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        #mainCtaButton {
+            background: linear-gradient(to right, var(--button-main-bg-start), var(--button-main-bg-end));
+        }
+        #mainCtaButton:hover {
+            background: linear-gradient(to right, var(--button-main-hover-start), var(--button-main-hover-end));
+        }
+
+        #discordButton {
+            background: linear-gradient(to right, var(--button-secondary-bg-start), var(--button-secondary-bg-end));
+            padding: 16px 32px;
+            font-size: 1.2em;
+            border-radius: 14px;
+        }
+        #discordButton:hover {
+            background: linear-gradient(to right, var(--button-secondary-hover-start), var(--button-secondary-hover-end));
+        }
+
+        #reflexTestButton {
+            background: linear-gradient(to right, var(--button-yellow-bg-start), var(--button-yellow-bg-end));
+            padding: 16px 32px;
+            font-size: 1.2em;
+            border-radius: 14px;
+            color: var(--text-primary);
+        }
+        #reflexTestButton:hover {
+            background: linear-gradient(to right, var(--button-yellow-hover-start), var(--button-yellow-hover-end));
+        }
+
+        /* Quiz specific styles */
+        #quizSection {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        #quizSection h2 {
+            margin-top: 0;
+            margin-bottom: 25px;
+            border-bottom: none;
+            padding-bottom: 0;
+            color: var(--heading-color);
+        }
+
+        #questionContainer {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        #answerButtons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .answer-button {
+            background: linear-gradient(to right, #6c757d, #5a6268); /* Default grey */
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .answer-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .answer-button.correct {
+            background: linear-gradient(to right, var(--button-green-bg-start), var(--button-green-bg-end));
+        }
+
+        .answer-button.wrong {
+            background: linear-gradient(to right, var(--button-red-bg-start), var(--button-red-bg-end));
+        }
+
+        #feedback {
+            margin-top: 20px;
+            font-size: 1.1em;
+            font-weight: 500;
+            color: var(--text-primary);
+            min-height: 30px; /* To prevent layout shift */
+        }
+
+        #quizControls {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        #startQuizButton, #nextButton, #restartQuizButton, #generateQuestionsButton {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            color: white;
+            border: none;
+        }
+
+        #startQuizButton {
+            background: linear-gradient(to right, var(--button-green-bg-start), var(--button-green-bg-end));
+        }
+        #startQuizButton:hover {
+            background: linear-gradient(to right, var(--button-green-hover-start), var(--button-green-hover-end));
+            transform: translateY(-5px);
+        }
+
+        #nextButton {
+            background: linear-gradient(to right, var(--button-main-bg-start), var(--button-main-bg-end));
+        }
+        #nextButton:hover {
+            background: linear-gradient(to right, var(--button-main-hover-start), var(--button-main-hover-end));
+            transform: translateY(-5px);
+        }
+
+        #restartQuizButton {
+            background: linear-gradient(to right, var(--button-secondary-bg-start), var(--button-secondary-bg-end));
+        }
+        #restartQuizButton:hover {
+            background: linear-gradient(to right, var(--button-secondary-hover-start), var(--button-secondary-hover-end));
+            transform: translateY(-5px);
+        }
+
+        #generateQuestionsButton {
+            background: linear-gradient(to right, #8A2BE2, #6A0DAD); /* Purple gradient for new button */
+        }
+        #generateQuestionsButton:hover {
+            background: linear-gradient(to right, #6A0DAD, #4B0082);
+            transform: translateY(-5px);
+        }
+
+        #quizResult {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--heading-color);
+            margin-top: 30px;
+            display: none;
+        }
+
+        #loadingMessage {
+            margin-top: 20px;
+            font-size: 1.1em;
+            font-style: italic;
+            color: var(--text-secondary);
+            display: none; /* Hidden by default */
+        }
+
+        .adsbygoogle-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 180px;
+            margin: 60px auto;
+            border-radius: 16px;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease, background-color 0.8s ease, border-color 0.8s ease, box-shadow 0.8s ease;
+            width: 100%;
+        }
+        
+        footer {
+            margin-top: 50px;
+            padding: 25px;
+            width: 100%;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.95em;
+            background-color: rgba(0, 0, 0, 0.03);
+            transition: background-color 0.8s ease, color 0.8s ease;
+            position: relative;
+            z-index: 1;
+        }
+        footer a {
+            color: var(--heading-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.8s ease;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            margin-top: 18px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.3em;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+        .social-links a:hover {
+            color: var(--heading-color);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 20px auto;
+                border-radius: 18px;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.9em;
+            }
+            p {
+                font-size: 1em;
+            }
+            .slogan {
+                font-size: 1.2em;
+            }
+            .button {
+                padding: 14px 28px;
+                font-size: 1.1em;
+                border-radius: 12px;
+            }
+            .adsbygoogle-container {
+                min-height: 140px;
+                margin: 30px auto;
+                border-radius: 12px;
+            }
+            footer {
+                padding: 18px;
+            }
+            .social-links {
+                gap: 18px;
+            }
+            /* Quiz specific for mobile */
+            #questionContainer {
+                font-size: 1.1em;
+            }
+            .answer-button {
+                padding: 12px 20px;
+                font-size: 1em;
+            }
+            #startQuizButton, #nextButton, #restartQuizButton, #generateQuestionsButton {
+                padding: 12px 25px;
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+                margin: 15px auto;
+                border-radius: 16px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.6em;
+            }
+            p {
+                font-size: 0.9em;
+            }
+            .slogan {
+                font-size: 1.1em;
+            }
+            .button-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .button {
+                width: 90%;
+                font-size: 1em;
+                padding: 12px 20px;
+                border-radius: 10px;
+            }
+            .adsbygoogle-container {
+                min-height: 120px;
+                margin: 20px auto;
+                border-radius: 10px;
+            }
+            footer {
+                padding: 15px;
+            }
+            .social-links {
+                gap: 15px;
+            }
+            /* Quiz specific for smaller mobile */
+            #questionContainer {
+                font-size: 1em;
+            }
+            .answer-button {
+                padding: 10px 15px;
+                font-size: 0.9em;
+            }
+            #startQuizButton, #nextButton, #restartQuizButton, #generateQuestionsButton {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+        <div class="shape shape-5"></div>
+        <div class="shape shape-6"></div>
+        <div class="shape shape-7"></div>
+    </div>
+
+    <div class="container">
+        <div class="inner-shape inner-shape-1"></div>
+        <div class="inner-shape inner-shape-2"></div>
+        <div class="inner-shape inner-shape-3"></div>
+        <div class="inner-shape inner-shape-4"></div>
+
+        <h1>TurboDrive</h1>
+        <p class="slogan">Votre dose quotidienne d'adrénaline et de savoir sur le sport automobile !</p>
+        
+        <p>Bienvenue sur le site officiel de TurboDrive43, la chaîne YouTube dédiée à l'univers fascinant de la Formule 1, du rallye, et de tous les sports automobiles.</p>
+        
+        <div class="button-group">
+            <a href="https://www.youtube.com/@TurboDrive43" target="_blank" id="mainCtaButton" class="button"><span>Voir la chaîne YouTube</span></a>
+            <a href="https://discord.gg/DxJ6K3vBxD" target="_blank" id="discordButton" class="button"><span>Rejoindre le Discord</span></a>
+            <a href="reflex-test.html" id="reflexTestButton" class="button"><span>Tester vos réflexes</span></a>
+        </div>
+
+        <!-- Section Quiz -->
+        <section id="quizSection">
+            <h2>Quiz Sport Automobile</h2>
+            <p>Testez vos connaissances sur la Formule 1 et le sport automobile !</p>
+            <button id="startQuizButton" style="display: none;">Commencer le Quiz</button> <!-- Hidden by default -->
+            <button id="generateQuestionsButton">Générer de nouvelles questions ✨</button>
+            <p id="loadingMessage">Génération des questions en cours...</p> <!-- Initially visible, then hidden by JS -->
+
+            <div id="quizContent" style="display: none;">
+                <div id="questionContainer"></div>
+                <div id="answerButtons"></div>
+                <div id="feedback"></div>
+                <div id="quizControls">
+                    <button id="nextButton" style="display: none;">Question Suivante</button>
+                    <button id="restartQuizButton" style="display: none;">Recommencer le Quiz</button>
+                </div>
+                <div id="quizResult"></div>
+            </div>
+        </section>
+
+        <div class="adsbygoogle-container">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2416014288587554"
+                 data-ad-slot="9969293667"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+        
+        <p class="small-text">Suivez-nous pour ne rien manquer de l'actualité du sport automobile !</p>
+    </div>
+
+    <footer>
+        <p>© 2025 TurboDrive. Tous droits réservés. <a href="#">Politique de confidentialité</a></p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/turbodrive43_officiel" target="_blank">Instagram</a>
+            <a href="https://www.tiktok.com/@turbo_drive43" target="_blank">TikTok</a>
+            <a href="https://twitter.com/" target="_blank">X (Twitter)</a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Google AdSense initialization
+            setTimeout(() => {
+                try {
+                    if (window.adsbygoogle && window.adsbygoogle.push) {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    } else {
+                        console.warn("adsbygoogle n'est pas disponible. Les publicités pourraient ne pas se charger.");
+                    }
+                } catch (error) {
+                    console.error("Erreur lors de l'appel à adsbygoogle.push:", error);
+                }
+            }, 500);
+
+            // Quiz Logic
+            let currentQuizQuestions = []; // This will now only hold AI-generated questions
+            let currentQuestionIndex = 0;
+            let score = 0;
+
+            const quizSection = document.getElementById('quizSection');
+            const startQuizButton = document.getElementById('startQuizButton');
+            const generateQuestionsButton = document.getElementById('generateQuestionsButton');
+            const loadingMessage = document.getElementById('loadingMessage');
+            const quizContent = document.getElementById('quizContent');
+            const questionContainer = document.getElementById('questionContainer');
+            const answerButtonsElement = document.getElementById('answerButtons');
+            const feedbackElement = document.getElementById('feedback');
+            const nextButton = document.getElementById('nextButton');
+            const restartQuizButton = document.getElementById('restartQuizButton');
+            const quizResultElement = document.getElementById('quizResult');
+
+            // Initial state on page load
+            startQuizButton.style.display = 'none'; // Hide "Commencer le Quiz" button initially
+            loadingMessage.style.display = 'none'; // Hide loading message initially
+            quizContent.style.display = 'none'; // Hide quiz content initially
+
+            // Event listeners
+            startQuizButton.addEventListener('click', startQuiz); // No argument needed, uses currentQuizQuestions
+            generateQuestionsButton.addEventListener('click', generateNewQuestions);
+            nextButton.addEventListener('click', () => {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < currentQuizQuestions.length) {
+                    showQuestion();
+                } else {
+                    showResult();
+                }
+            });
+            restartQuizButton.addEventListener('click', resetQuiz); // No argument needed
+
+            // Function to start the quiz
+            function startQuiz() {
+                // Ensure there are questions to start with
+                if (currentQuizQuestions.length === 0) {
+                    feedbackElement.textContent = "Veuillez générer des questions d'abord !";
+                    feedbackElement.style.color = 'var(--button-red-bg-start)';
+                    return;
+                }
+
+                startQuizButton.style.display = 'none';
+                generateQuestionsButton.style.display = 'none'; // Hide generate button during quiz
+                quizContent.style.display = 'block';
+                currentQuestionIndex = 0;
+                score = 0;
+                quizResultElement.style.display = 'none';
+                showQuestion();
+            }
+
+            // Function to display a question
+            function showQuestion() {
+                resetState();
+                const question = currentQuizQuestions[currentQuestionIndex];
+                questionContainer.textContent = question.question;
+
+                question.answers.forEach(answer => {
+                    const button = document.createElement('button');
+                    button.textContent = answer.text;
+                    button.classList.add('answer-button');
+                    if (answer.correct) {
+                        button.dataset.correct = answer.correct;
+                    }
+                    button.addEventListener('click', selectAnswer);
+                    answerButtonsElement.appendChild(button);
+                });
+            }
+
+            // Function to reset the quiz state for a new question
+            function resetState() {
+                nextButton.style.display = 'none';
+                feedbackElement.textContent = '';
+                while (answerButtonsElement.firstChild) {
+                    answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+                }
+            }
+
+            // Function to handle answer selection
+            function selectAnswer(e) {
+                const selectedButton = e.target;
+                const isCorrect = selectedButton.dataset.correct === 'true';
+
+                if (isCorrect) {
+                    score++;
+                    feedbackElement.textContent = 'Correct !';
+                    feedbackElement.style.color = 'var(--button-green-bg-start)';
+                } else {
+                    feedbackElement.textContent = 'Faux !';
+                    feedbackElement.style.color = 'var(--button-red-bg-start)';
+                }
+
+                // Apply correct/wrong classes and disable all buttons
+                Array.from(answerButtonsElement.children).forEach(button => {
+                    if (button.dataset.correct === 'true') {
+                        button.classList.add('correct');
+                    } else if (button === selectedButton && !isCorrect) {
+                        button.classList.add('wrong');
+                    }
+                    button.disabled = true; // Disable all buttons after selection
+                });
+
+                nextButton.style.display = 'block';
+                if (currentQuestionIndex === currentQuizQuestions.length - 1) {
+                    nextButton.textContent = 'Voir les résultats';
+                } else {
+                    nextButton.textContent = 'Question Suivante';
+                }
+            }
+
+            // Function to show quiz results
+            function showResult() {
+                resetState();
+                questionContainer.style.display = 'none';
+                answerButtonsElement.style.display = 'none';
+                feedbackElement.style.display = 'none';
+                nextButton.style.display = 'none';
+                restartQuizButton.style.display = 'block';
+                
+                // Show both start and generate buttons again after quiz is done
+                startQuizButton.style.display = 'inline-block'; // To replay the same generated quiz
+                generateQuestionsButton.style.display = 'inline-block'; // To generate new questions
+
+                quizResultElement.style.display = 'block';
+                quizResultElement.textContent = `Votre score : ${score} sur ${currentQuizQuestions.length}`;
+            }
+
+            // Function to reset the quiz (for replay of current generated questions)
+            function resetQuiz() {
+                currentQuestionIndex = 0;
+                score = 0;
+                questionContainer.style.display = 'block';
+                answerButtonsElement.style.display = 'flex';
+                feedbackElement.style.display = 'block';
+                nextButton.textContent = 'Question Suivante';
+                restartQuizButton.style.display = 'none';
+                quizResultElement.style.display = 'none';
+                startQuizButton.style.display = 'none'; // Hide start button as quiz is about to begin
+                generateQuestionsButton.style.display = 'none'; // Hide generate button as quiz is about to begin
+                showQuestion();
+            }
+
+            // ✨ Gemini API Integration: Function to generate new questions
+            async function generateNewQuestions() {
+                startQuizButton.style.display = 'none';
+                generateQuestionsButton.style.display = 'none';
+                loadingMessage.style.display = 'block'; // Show loading message
+                quizContent.style.display = 'none'; // Hide quiz content while loading
+                quizResultElement.style.display = 'none'; // Hide results if visible
+                feedbackElement.textContent = ''; // Clear previous feedback
+
+                try {
+                    const prompt = "Génère 5 questions de quiz sur le sport automobile (Formule 1, Rallye, Endurance, etc.). Chaque question doit avoir 4 options de réponse. Le format doit être un tableau JSON d'objets, où chaque objet a les clés 'question' (string) et 'answers' (tableau d'objets). Chaque objet 'answers' doit avoir les clés 'text' (string) et 'correct' (boolean, true pour la bonne réponse, false pour les autres). Assure-toi qu'il y a toujours une seule réponse correcte par question.";
+                    let chatHistory = [];
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+
+                    const payload = {
+                        contents: chatHistory,
+                        generationConfig: {
+                            responseMimeType: "application/json",
+                            responseSchema: {
+                                type: "ARRAY",
+                                items: {
+                                    type: "OBJECT",
+                                    properties: {
+                                        "question": { "type": "STRING" },
+                                        "answers": {
+                                            "type": "ARRAY",
+                                            "items": {
+                                                "type": "OBJECT",
+                                                "properties": {
+                                                    "text": { "type": "STRING" },
+                                                    "correct": { "type": "BOOLEAN" }
+                                                },
+                                                "required": ["text", "correct"]
+                                            }
+                                        }
+                                    },
+                                    "required": ["question", "answers"]
+                                }
+                            }
+                        }
+                    };
+                    const apiKey = ""; // Canvas will provide this at runtime
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const jsonString = result.candidates[0].content.parts[0].text;
+                        const newQuestions = JSON.parse(jsonString);
+                        
+                        // Validate the structure of generated questions (optional but good practice)
+                        if (Array.isArray(newQuestions) && newQuestions.length > 0 && newQuestions.every(q => 
+                            q.question && Array.isArray(q.answers) && q.answers.length === 4 &&
+                            q.answers.filter(a => a.correct).length === 1
+                        )) {
+                            currentQuizQuestions = newQuestions; // Update the quiz questions
+                            startQuizButton.style.display = 'inline-block'; // Show "Commencer le Quiz" button
+                            feedbackElement.textContent = "Questions générées ! Cliquez sur 'Commencer le Quiz'.";
+                            feedbackElement.style.color = 'var(--button-green-bg-start)';
+                        } else {
+                            console.error("Structure de questions générées inattendue:", newQuestions);
+                            feedbackElement.textContent = "Erreur: Questions générées invalides. Veuillez réessayer.";
+                            feedbackElement.style.color = 'var(--button-red-bg-start)';
+                            generateQuestionsButton.style.display = 'inline-block'; // Show generate button again
+                        }
+                    } else {
+                        console.error("Aucune question générée par l'API Gemini.");
+                        feedbackElement.textContent = "Erreur: Impossible de générer des questions. Veuillez réessayer.";
+                        feedbackElement.style.color = 'var(--button-red-bg-start)';
+                        generateQuestionsButton.style.display = 'inline-block'; // Show generate button again
+                    }
+                } catch (error) {
+                    console.error("Erreur lors de la génération de questions:", error);
+                    feedbackElement.textContent = "Erreur réseau ou API. Veuillez vérifier votre connexion et réessayer.";
+                    feedbackElement.style.color = 'var(--button-red-bg-start)';
+                    generateQuestionsButton.style.display = 'inline-block'; // Show generate button again
+                } finally {
+                    loadingMessage.style.display = 'none'; // Hide loading message
+                }
+            }
+
+            // Initial display of the quiz section
+            quizSection.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
